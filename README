@@ -1,0 +1,63 @@
+PORT=8002 node bin/www
+npm start
+
+
+(b) image upload
+    - limit file size
+    - cropper?
+(c) password update
+(d) session for refresh
+(e) facebook login
+(f) google login
+
+
+(g) hosting
+
+cra build
+change static drive to the dist folder that is created
+remove CORS
+
+
+
+How many different actions?
+
+(1) Retrieve the feed. (triggered by page load or by refresh)
+  FE:
+    -> Obtain new coordinates.
+    -> PUT the new coordinates.
+  BE:
+    -> Update coordinates and GET correct user list.
+    -> Obtain user information for users on user list.
+    -> Send user information back to FE.
+  FE:
+    -> Render new feed with user information.
+
+(2) Manage the selection. (triggered by user click and by feed load --defaults to first--)
+  FE:
+    -> On feed load, the selection will default to profile at index 0.
+    -> On user click, the selected will change to the user selected.
+
+(3) Log in. (triggered by submission)
+  FE:
+    -> PUT user's submission.
+  BE:
+    -> validate user credentials.
+    -> If valid, return user's profile.
+  FE:
+    -> Navigate to feed and launch action #1.
+(4) Update Profile information. (triggered by user submission)
+  FE:
+    -> PUT the entire profile.
+  BE:
+    -> Update the whole profile even if nothing changed.
+    -> send update profile.
+  FE:
+    -> confirm that data saved.
+
+(5) Delete Profile. (triggered by user submission)
+  FE:
+    -> DELETE the entire Profile
+  BE:
+    -> Remove user information.
+  FE:
+    -> Confirm and log out.
