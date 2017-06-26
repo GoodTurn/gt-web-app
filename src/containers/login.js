@@ -4,7 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
 import { logItIn, loginAction, signUpAction, activate } from '../actions/action_login.js';
-import { config } from '../../config';
+import { config } from '../../../server/config';
 
 class Login extends Component {
   constructor(props) {

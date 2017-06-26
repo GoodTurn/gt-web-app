@@ -5,7 +5,7 @@ export const LOGOUT = 'LOGOUT';
 export const ACT_FIREBASE = 'ACT_FIREBASE';
 export const GET_LOCATION = 'GET_LOCATION';
 import { getFeed } from './action_feed';
-import { API_KEY } from '../../config';
+import { API_KEY } from '../../../server/config';
 
 import axios from 'axios';
 import firebase from 'firebase';
